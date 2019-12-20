@@ -1,0 +1,67 @@
+.carousel {
+  width: 80%;
+  height: 70vh;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.carouselImg {
+  width: 100%;
+  height: 70vh;
+}
+.heroCaption {
+  position: relative;
+}
+.heading {
+  display: inline-block;
+  position: absolute;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:#505050;
+  line-height: 1.2;
+  font-size: 25px;
+}
+.headingSlide1 {
+  top: -12em;
+  right: 15.9em;
+  width: 55%;
+  font-style: italic;
+}
+.headingSlide2 {
+  top: -14em;
+  left: 16em;
+  width: 50%;
+  font-size: 26px;
+  color: white;
+  font-weight: bold;
+}
+.heroCaption .shoppa {
+  top: -10.5em;
+  color: white;
+  background-color: #908393;
+}
+.heroCaption .shoppa:hover {
+  background-color: #b1a1b5;
+}
+.heroCaption .flicka {
+  right: 17em;
+}
+.heroCaption .pojke {
+  right: -17em;
+}
+.headingSlide3 {
+  top: -5em;
+  left: -4em;
+  font-size: 20px;
+  height: 7.2em;
+  width: 7.2em;
+  border-radius: 80%;
+  background-color:#908393;
+  color: white;
+}
+.headingSlide3 .bigNumber {
+  font-size: 50px;
+  display: inline-block;
+  padding-top: 15px;
+}
+.headingSlide3 .newLine {
+  display: inline-block;
+}

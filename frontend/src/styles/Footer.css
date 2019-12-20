@@ -1,0 +1,53 @@
+.footerContainer {
+  margin-top: 50px;
+}
+.socialMediaIconsContainer {
+  background-color: #908393;
+  padding: 10px;
+  text-align: center;
+}
+.circle {
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 5px;
+  margin-right: 18px;
+}
+.fa-facebook-f, .fa-twitter, .fa-pinterest-p, .fa-instagram, .fa-youtube {
+  width: 20px;
+  font-size: 16px;
+  color:white;
+}
+.footerMenuContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px 0px 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 13px;
+  background-color: #DECCCA;
+  color: #505050;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.bold {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.fa-phone, .fa-envelope, .fa-map-marker-alt {
+  margin-right: 5px;
+}
+.copyright {
+  background-color: #DECCCA;
+  color: #505050;
+  font-size: 12px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: right;
+  padding-right: 20px;
+  padding-bottom: 5px;
+}
+.fa-copyright {
+  font-size: 10px;
+  margin-top: 10px;
+}
