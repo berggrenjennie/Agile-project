@@ -24,11 +24,28 @@ const productSchema = new mongoose.Schema({
   material:{
     type: String,
   },
+  brand:{
+    type: String,
+  },
   size:{
     type: String,
   },
   color:{
     type: String,
+  },
+  price:{
+    type: Number,
+    required: true
+  },
+  isRea:{
+    type: Boolean,
+    required: true,
+    default: false
+  },
+  reaPrice:{
+    type: Number,
+    required: true,
+    default: 0.00
   },
   imagePath: {
     type: String,
