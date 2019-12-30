@@ -10,11 +10,11 @@ class FooterComponent extends Component {
     return (
       <div className='footerContainer'>
         <div className='socialMediaIconsContainer'>
-          <span className='circle'><i class='fab fa-facebook-f'></i></span>
-          <span className='circle'><i class='fab fa-twitter'></i></span>
-          <span className='circle'><i class='fab fa-pinterest-p'></i></span>
-          <span className='circle'><i class='fab fa-instagram'></i></span>
-          <span className='circle'><i class='fab fa-youtube'></i></span>
+          <span className='circle'><i className='fab fa-facebook-f'></i></span>
+          <span className='circle'><i className='fab fa-twitter'></i></span>
+          <span className='circle'><i className='fab fa-pinterest-p'></i></span>
+          <span className='circle'><i className='fab fa-instagram'></i></span>
+          <span className='circle'><i className='fab fa-youtube'></i></span>
         </div>
         <div className='footerMenuContainer'>
           <ul>
@@ -37,11 +37,11 @@ class FooterComponent extends Component {
           <ul>
             <li className='bold'>Kontakta Oss</li>
             <li><i className='fas fa-phone'></i> 08-654 85 90</li>
-            <li><i class='fas fa-envelope'></i> hej@bellus.se</li>
-            <li><i class='fas fa-map-marker-alt'></i> Framtidsvägen 10A 352 57 Växjö</li>
+            <li><i className='fas fa-envelope'></i> hej@bellus.se</li>
+            <li><i className='fas fa-map-marker-alt'></i> Framtidsvägen 10A 352 57 Växjö</li>
           </ul>
         </div>
-        <div className='copyright'>copyright<i class="far fa-copyright"></i>JFE2020</div>
+        <div className='copyright'>copyright<i className="far fa-copyright"></i>JFE2020</div>
       </div>
     );
   }
