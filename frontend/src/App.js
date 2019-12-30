@@ -1,14 +1,26 @@
 //core functionality from React.
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+//existing admin component imports.
+import AdminScreen from './screens/AdminScreen';
+import AddProductComponent from './admincomponents/AddProductComponent';
+import EditProductComponent from './admincomponents/EditProductComponent';
+
 //existing component imports.
-import CarouselComponent from './components/CarouselComponent';
+import HomeScreen from './screens/HomeScreen';
 import FooterComponent from './components/FooterComponent';
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <CarouselComponent/>
+      <Router>
+        <Route exact path="/admin" component={AdminScreen} />
+        <Route path="/addProduct" component={AddProductComponent} />
+        <Route exact path="/editProduct/:id" component={EditProductComponent} />
+        <Route exact path="/" component={HomeScreen} />
         <FooterComponent/>
+      </Router>
       </div>
     );
   }

@@ -21,10 +21,10 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  material:{
+  brand:{
     type: String,
   },
-  brand:{
+  material:{
     type: String,
   },
   size:{
