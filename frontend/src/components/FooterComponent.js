@@ -41,7 +41,7 @@ class FooterComponent extends Component {
             <li><i class='fas fa-map-marker-alt'></i> Framtidsvägen 10A 352 57 Växjö</li>
           </ul>
         </div>
-        <div className='copyright'>copyright<i class="far fa-copyright"></i>JFE2020</div>
+        <div className='copyright'>copyright<i class='far fa-copyright'></i>JFE2020</div>
       </div>
     );
   }
