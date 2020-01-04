@@ -84,7 +84,7 @@ class EditProductComponent extends Component {
 
   render() {
     const { employee, client, project,status,projectsSelected } = this.state;
-    const { classes, dataArray, employees, clientsProjectsArray, allProjects, statuses, showFilterBtn } = this.props;
+    const { classes,  employees, clientsProjectsArray, allProjects, statuses, showFilterBtn } = this.props;
     const allClients = [];
     clientsProjectsArray.forEach(item => allClients.push(item.clientName));
     let projects = [];
@@ -94,19 +94,6 @@ class EditProductComponent extends Component {
       projects = allProjects;
     }
 
-    //CSV file headers.
-    const headers = [
-      { label:'Id', key:'id' },
-      { label:'Created date', key:'createdDate' },
-      { label:'Assignee', key:'assignee' },
-      { label:'Client', key:'client' },
-      { label:'Project', key:'project' },
-      { label:'Epic', key:'parentKey' },
-      { label:'Summary', key:'summary' },
-      { label:'Status', key:'status' },
-      { label:'Time', key:'timespent' },
-      { label:'TEstimation', key:'customField'},
-    ];
 
     return (
       <div>

@@ -7,6 +7,7 @@ import AddProductComponent from './admincomponents/AddProductComponent';
 import EditProductComponent from './admincomponents/EditProductComponent';
 
 //existing component imports.
+import NavigationComponent from './components/NavigationComponent';
 import HomeScreen from './screens/HomeScreen';
 import FooterComponent from './components/FooterComponent';
 
@@ -15,6 +16,7 @@ class App extends Component {
     return (
       <div className="App">
       <Router>
+        <NavigationComponent/>
         <Route exact path="/admin" component={AdminScreen} />
         <Route path="/addProduct" component={AddProductComponent} />
         <Route exact path="/editProduct/:id" component={EditProductComponent} />
