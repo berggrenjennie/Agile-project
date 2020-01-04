@@ -1,0 +1,27 @@
+.saleProductsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+  margin-top: -50px;
+}
+
+.saleProductsContainer > div {
+  width: 300px;
+  margin: 25px;
+  padding-top: 0;
+}
+
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#908393;
+  font-family: Verdana;
+  padding: 20px
+}
+.saleHeader{
+  margin-left: 100px
+}
