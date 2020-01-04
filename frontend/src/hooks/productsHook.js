@@ -13,7 +13,9 @@ function useFetchProduct(url) {
       .catch(error => setIsLoading(true));
     }
   useEffect(() => {
-    fetchUrl();
+    setTimeout(() => {
+      fetchUrl();
+    }, 3000);
   });
   return [data,isLoading];
 }

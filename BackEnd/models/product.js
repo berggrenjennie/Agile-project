@@ -21,9 +21,6 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  brand:{
-    type: String,
-  },
   material:{
     type: String,
   },
@@ -37,15 +34,23 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  isRea:{
+  rating:{
+    type: Number,
+  },
+  isSale:{
     type: Boolean,
     required: true,
     default: false
   },
-  reaPrice:{
+  salePercent:{
     type: Number,
     required: true,
     default: 0.00
+  },
+  isOnlyBigImage:{
+    type: Boolean,
+    required: true,
+    default: false
   },
   imagePath: {
     type: String,

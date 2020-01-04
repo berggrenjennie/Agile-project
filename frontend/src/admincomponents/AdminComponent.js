@@ -1,5 +1,6 @@
 //core functionality from react.
 import React, { Component } from 'react';
+import axios from 'axios';
 
 //core functionality from material-ui.
 import { withStyles } from '@material-ui/core/styles';
@@ -11,7 +12,8 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
+import IconButton from '@material-ui/core/IconButton';
+import BackspaceIcon from '@material-ui/icons/Backspace';
 //existing component imports.
 import TablePaginationActions from './TablePaginationActions';
 
@@ -34,6 +36,9 @@ const styles = theme => ({
   },
   border: {
     border: '1px solid #DECCCA'
+  },
+  iconButton:{
+    color:'#908393',
   }
 });
 
@@ -64,6 +69,16 @@ class AdminComponent extends Component {
     });
   };
 
+  /*A method which delete a special product from API,
+   by using Delete method.
+  }*/
+  removeProduct(id) {
+    axios.delete ('http://localhost:2000/products/' + id)
+      .then(response => {
+        console.log('Success:', JSON.stringify(response));
+      })
+      .catch(error => console.error('Error:', error));
+  }
   render() {
     const { rowsPerPage, page } = this.state;
     const { classes, productsData } = this.props;
@@ -74,42 +89,42 @@ class AdminComponent extends Component {
             <TableHead>
               <TableRow>
                 <TableCell className={classes.firstRow} align='center'>Id</TableCell>
-                <TableCell className={classes.firstRow} align='center'>Product name</TableCell>
-                <TableCell className={classes.firstRow} align='center'>Category</TableCell>
-                <TableCell className={classes.firstRow} align='center'>subCategory1</TableCell>
-                <TableCell className={classes.firstRow} align='center'>subCategory2</TableCell>
-                <TableCell className={classes.firstRow} align='center'>Description</TableCell>
-                <TableCell className={classes.firstRow} align='center'>Brand</TableCell>
+                <TableCell className={classes.firstRow} align='center'>Produktnamn</TableCell>
+                <TableCell className={classes.firstRow} align='center'>Kategori</TableCell>
+                <TableCell className={classes.firstRow} align='center'>Underkategori 1</TableCell>
+                <TableCell className={classes.firstRow} align='center'>Produktinformation</TableCell>
                 <TableCell className={classes.firstRow} align='center'>Material</TableCell>
-                <TableCell className={classes.firstRow} align='center'>Size</TableCell>
-                <TableCell className={classes.firstRow} align='center'>Color</TableCell>
+                <TableCell className={classes.firstRow} align='center'>Storlek</TableCell>
+                <TableCell className={classes.firstRow} align='center'>Färg</TableCell>
                 <TableCell className={classes.firstRow} align='center'>Price</TableCell>
-                <TableCell className={classes.firstRow} align='center'>imagePath</TableCell>
+                <TableCell className={classes.firstRow} align='center'>Imagepath</TableCell>
                 <TableCell className={classes.firstRow} align='center'>Rea</TableCell>
-                <TableCell className={classes.firstRow} align='center'>Rea price</TableCell>
-                <TableCell className={classes.firstRow} align='center'>Delete</TableCell>
+                <TableCell className={classes.firstRow} align='center'>Procent</TableCell>
+                <TableCell className={classes.firstRow} align='center'>Ta bort</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {productsData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((data, index) => {
                 return (
                 <TableRow className='evenColor' key={index}>
-                  <TableCell className={classes.border} align='center'>{data._id}</TableCell>
+                  <TableCell className={classes.border} align='center'>{index+1}</TableCell>
                   <TableCell className={classes.border} align='center'>{data.name}</TableCell>
                   <TableCell className={classes.border} align='center'>{data.category}</TableCell>
                   <TableCell className={classes.border} align='center'>{data.subCategory1}</TableCell>
-                  <TableCell className={classes.border} align='center'>{data.subCategory2}</TableCell>
                   <TableCell className={classes.border} align='center'>{data.description}</TableCell>
-                  <TableCell className={classes.border} align='center'>{data.brand}</TableCell>
                   <TableCell className={classes.border} align='center'>{data.material}</TableCell>
                   <TableCell className={classes.border} align='center'>{data.size}</TableCell>
                   <TableCell className={classes.border} align='center'>{data.color}</TableCell>
-                  <TableCell className={classes.border} align='center'>{data.price}</TableCell>
+                  <TableCell className={classes.border} align='center'>{data.price+' kr'}</TableCell>
                   <TableCell className={classes.border} align='center'>{data.imagePath}</TableCell>
-                  <TableCell className={classes.border} align='center'>{data.isRea? "Rea" : "Not Rea"}</TableCell>
-                  <TableCell className={classes.border} align='center'>{data.reaPrice}</TableCell>
-                  <TableCell className={classes.border} align='center'>{"delete"}</TableCell>
-                </TableRow>
+                  <TableCell className={classes.border} align='center'>{data.isSale? "Rea" : "Not Rea"}</TableCell>
+                  <TableCell className={classes.border} align='center'>{data.salePercent+' %'}</TableCell>
+                  <TableCell className={classes.border} align='center'>
+                    <IconButton className={classes.iconButton} onClick={(e) => this.removeProduct(data._id, e)}>
+                      <BackspaceIcon/>
+                    </IconButton>
+                  </TableCell>
+                  </TableRow>
                 )
                 })
               }

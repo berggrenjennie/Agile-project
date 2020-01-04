@@ -3,15 +3,19 @@ const routes = require("./routes");
 const db = require("./models");
 const cors = require('cors');
 const app = express();
-
+var ImageRouter = require('./routes/image');
 // environment variable PORT or 3000 if unset
 const port = process.env.PORT || 2000;
 app.use(cors());
+
+//Add router to read image from uploads folder
+app.use('/image', ImageRouter);
+app.use('/uploads', express.static('uploads'));
+
 // Add middleware for parsing the body to req.body
 // middlewares are executed in the order added, so add before routes
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use((req, res, next) => {
   req.models = db.models
   next()

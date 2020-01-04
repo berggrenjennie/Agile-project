@@ -12,8 +12,18 @@ import { useFetchProduct } from '../hooks/productsHook';
 //existing component imports.
 import AdminComponent from '../admincomponents/AdminComponent';
 
+//core functionality from material-ui.
+import { makeStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
 //CSS imports.
 import '../styles/Admin.css';
+
+const useStyles = makeStyles(theme => ({
+  progress: {
+    color: '#908393'
+  }
+}));
+
 
 const StyledButton = styled(Button)`
   background: linear-gradient(45deg, #DECCCA 30%, #FFF5EE 90%);
@@ -33,17 +43,21 @@ export default function AdminScreen(props) {
   }
   //fetching products data  from Bulles-shopDB.
   const [data, isLoading] =  useFetchProduct('http://localhost:2000/products');
+  const classes = useStyles();
   return (
     <div>
-      {data.length>0?
+      {!isLoading?
         <Fragment>
-          <h2>Products</h2>
-          <AdminComponent productsData={data} isLoading={isLoading} permission="admin"/>
+          <h2>Produkter</h2>
+          <AdminComponent productsData={data} permission="admin"/>
           <div className="addDivBTN">
-            <StyledButton onClick={navigateToAddProductComponent}>Add new product</StyledButton>
+            <StyledButton onClick={navigateToAddProductComponent}>Lägg till en ny produkt</StyledButton>
           </div>
         </Fragment>
-      :null}
+        : <Fragment>
+            <span className='loading'><CircularProgress className={classes.progress}/></span>
+          </Fragment>
+      }
     </div>
   )
 }
