@@ -1,0 +1,41 @@
+.MainContainer {
+  background-color: #FFF5EE;
+}
+
+.CategoryProductsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  align-items: center;
+  width: 1000px;
+  height: 950px;
+  padding: 0px;
+
+  margin-top:0px;
+}
+
+.CategoryProductsContainer > div {
+  padding-top: 0;
+  margin: 10px;
+}
+.bigCard{
+  flex-grow:3;
+  width: 600px;
+  height: 600px;
+}
+.normalCard{
+  flex-grow:1;
+  width: 300px;
+  height: 300px;
+}
+.loading , .pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#908393;
+  font-family: Verdana;
+  padding: 20px
+}
+.Header{
+  margin-left: 100px
+}

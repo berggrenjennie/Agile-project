@@ -32,7 +32,7 @@ class SaleProductsComponent extends Component {
       <Fragment>
       {!isLoading?
         <Fragment>
-          <h1 className="saleHeader">REA</h1>
+          <h2 className="saleHeader">REA</h2>
           <div className="saleProductsContainer">
             {saleProducts.map((product, index) =>
               <div key={index}><CardComponent isSale={true}  product={product}/></div>

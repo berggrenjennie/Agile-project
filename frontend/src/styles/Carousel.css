@@ -3,6 +3,7 @@
   height: 70vh;
   margin: 0 auto;
   margin-top: 50px;
+  box-shadow: 2px 5px 5px 0px rgba(107,107,107,1);
 }
 .carouselImg {
   width: 100%;
