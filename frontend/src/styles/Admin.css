@@ -3,6 +3,7 @@ h2{
   padding: 20px;
   color: #908393;
   text-shadow: 0 2px 4px 1px rgba(255, 105, 135, 0.3);
+  font-weight: bold;
 }
 
 .addDivBTN{
@@ -32,13 +33,4 @@ h2{
   text-align: left;
   font-size: 30px;
   box-shadow: 0 2px 4px 1px rgba(255, 105, 135, 0.3);
-}
-
-.loading{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color:#908393;
-  font-family: Verdana;
-  padding: 20px
 }

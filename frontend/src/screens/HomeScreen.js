@@ -17,7 +17,7 @@ export default function HomeScreen(props) {
   //fetching products data  from Bulles-shopDB.
   const [data, isLoading] =  useFetchProduct('http://localhost:2000/products');
   //get the first 8 products which have sale.
-  const saleProductsArray=data.filter((product,index) => (index < 8 && product.isSale ===true));
+  const saleProductsArray=data.filter((product,index) => (index < 8 && product.isSale ===true && product.isOnlyBigImage ===false));
   return (
     <div>
         <Fragment>

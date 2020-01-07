@@ -9,18 +9,25 @@ import EditProductComponent from './admincomponents/EditProductComponent';
 //existing component imports.
 import NavigationComponent from './components/NavigationComponent';
 import HomeScreen from './screens/HomeScreen';
+import CategoryScreen from './screens/CategoryScreen';
+import ProductScreen from './screens/ProductScreen';
 import FooterComponent from './components/FooterComponent';
+
+import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
       <Router>
         <NavigationComponent/>
         <Route exact path="/admin" component={AdminScreen} />
         <Route path="/addProduct" component={AddProductComponent} />
         <Route exact path="/editProduct/:id" component={EditProductComponent} />
         <Route exact path="/" component={HomeScreen} />
+        <Route path="/home" component={HomeScreen} />
+        <Route path="/productCategory" component={CategoryScreen} />
+        <Route path="/product/:id" component={ProductScreen} />
         <FooterComponent/>
       </Router>
       </div>

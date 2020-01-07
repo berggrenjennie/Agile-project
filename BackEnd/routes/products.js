@@ -1,9 +1,11 @@
 // get all products & get product by category.
 getProduct = (req, res, next) => {
   var query;
-  if(req.query.category) {
-    query = req.models.Product.find({ category: req.query.category })
-  } else {
+  // console.log("category : ", req.query.category);
+  // console.log("subCategory1 : ", req.query.subCategory1);
+  if (req.query.category && req.query.subCategory1) {
+    query = req.models.Product.where({ category: req.query.category,subCategory1: req.query.subCategory1 })
+  }else {
     query = req.models.Product.find()
   }
   query.exec().then((product) => {
