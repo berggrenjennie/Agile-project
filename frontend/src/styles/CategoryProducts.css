@@ -1,7 +1,6 @@
 .MainContainer {
   background-color: #FFF5EE;
 }
-
 .CategoryProductsContainer {
   display: flex;
   flex-wrap: wrap;
@@ -13,17 +12,16 @@
 
   margin-top:0px;
 }
-
 .CategoryProductsContainer > div {
   padding-top: 0;
   margin: 10px;
 }
-.bigCard{
+.bigCard {
   flex-grow:3;
   width: 600px;
   height: 600px;
 }
-.normalCard{
+.normalCard {
   flex-grow:1;
   width: 300px;
   height: 300px;

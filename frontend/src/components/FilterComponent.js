@@ -20,13 +20,25 @@ const styles = theme => ({
     marginTop: theme.spacing(2)
   },
   root: {
-    margin: 10,
-    marginTop: 9,
     display: 'flex',
     justifyContent: 'center'
   },
   width: {
-    maxWidth: '12em'
+    maxWidth: '12em',
+    backgroundColor: 'white'
+  },
+  filterBTN: {
+    backgroundColor: '#908393',
+    border: 'rgb(255,73,0)',
+    color: 'white',
+    fontFamily: 'Verdana',
+    padding: '10px',
+    width: '80px',
+    height: '55px',
+    marginTop: '8px',
+    marginLeft: '8px',
+    marginBottom: '20px',
+    borderRadius: '5px'
   }
 });
 
@@ -69,7 +81,7 @@ class FilterComponent extends Component {
       <div>
         <form className={classes.root} autoComplete='off'>
           <FormControl variant='outlined' className={classes.formControl}>
-            <InputLabel  htmlFor='size'>Size</InputLabel>
+            <InputLabel htmlFor='size'>Size</InputLabel>
             <Select className={classes.width} value={size} onChange={this.handleInputChange('size')} input={<OutlinedInput labelWidth={40} name='size' id='size'/>}>
               <MenuItem  value=''><em>Alla Storlekar</em></MenuItem>
               {sizes.map((sizeNumber,index) => {
@@ -101,10 +113,11 @@ class FilterComponent extends Component {
               })}
             </Select>
           </FormControl>
-          <button className='filterBTN' onClick={this.onFilter}>Filter</button>
+          <button className={classes.filterBTN} onClick={this.onFilter}>Filter</button>
         </form>
       </div>
     )
   }
 }
+
 export default withStyles(styles)(FilterComponent);
