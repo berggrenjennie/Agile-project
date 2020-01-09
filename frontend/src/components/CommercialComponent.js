@@ -8,7 +8,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 //image imports.
 import commercialImg from '../images/commercial1.jpg';
 import logoNoTextImg from '../images/logoNoText.jpg';
-import paymentImg from '../images/payment.png';
+import paymentImg from '../images/Payment.PNG';
 
 class CommercialComponent extends Component {
   render() {
