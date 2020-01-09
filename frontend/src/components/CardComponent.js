@@ -48,6 +48,14 @@ const styles = theme => ({
   },
   iconButton:{
     color:'#908393'
+  },
+  price:{
+    color: '#908393',
+    marginTop: 10,
+    marginBottom:-20,
+  },
+  productName:{
+    marginBottom: 5,
   }
 });
 
@@ -77,13 +85,13 @@ class CardComponent extends Component {
                   :null}
                 </CardMedia>
                 <CardContent>
-                  <Typography variant="h5" component="h2">
+                  <Typography variant="h5" component="h2" className={classes.productName}>
                     {product.name}
                   </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
+                  <Typography variant="body2" color="textSecondary" component="p" className={classes.productDescription}>
                     {product.description}
                   </Typography>
-                  <Typography variant="h5" component="p">
+                  <Typography variant="h5" component="p" className={classes.price}>
                     {product.price+' kr.'}
                   </Typography>
                 </CardContent>

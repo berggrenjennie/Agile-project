@@ -1,21 +1,28 @@
 h2{
-  margin-left: 20px;
-  padding: 20px;
   color: #908393;
   text-shadow: 0 2px 4px 1px rgba(255, 105, 135, 0.3);
   font-weight: bold;
 }
+
+.header {    
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 180px;
+}
+
 .addDivBTN{
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 15px;
   margin-left: 80px;
-  color: red;
 }
 .addBTN{
   width: 400px;
   height: 70px;
+  background-color: black;
+  color: #FFF5EE;
+  border: 1px solid #FFF5EE;
 }
 .flex-container {
   display: flex;
@@ -25,11 +32,12 @@ h2{
 }
 
 .flex-container > div {
-  background-color: #FFF5EE;
+  background-color: white;
   width: 400px;
   padding: 50px;
   margin-left:30px;
   text-align: left;
   font-size: 30px;
-  box-shadow: 0 2px 4px 1px rgba(255, 105, 135, 0.3);
+  /*box-shadow: 0 2px 4px 1px rgba(255, 105, 135, 0.3);*/
+  box-shadow: 2px 5px 5px 0px rgba(107,107,107,1);
 }

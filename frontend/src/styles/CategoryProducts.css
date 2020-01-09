@@ -9,7 +9,6 @@
   width: 1000px;
   height: 950px;
   padding: 0px;
-
   margin-top:0px;
 }
 .CategoryProductsContainer > div {
@@ -37,6 +36,13 @@
 .Header{
   margin-left: 100px
 }
+
 html body div#menu-size.MuiPopover-root div.MuiPaper-root {
   margin-top: 3.5em;
+}
+.MuiTypography-body2 {
+  white-space:nowrap;
+  width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
