@@ -37,3 +37,6 @@
 .Header{
   margin-left: 100px
 }
+.MuiPaper-root {
+  margin-top: 3.5em;
+}
