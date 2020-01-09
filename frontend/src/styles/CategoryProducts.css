@@ -10,7 +10,6 @@
   width: 1000px;
   height: 950px;
   padding: 0px;
-
   margin-top:0px;
 }
 
@@ -38,4 +37,10 @@
 }
 .Header{
   margin-left: 100px
+}
+.MuiTypography-body2 {
+  white-space:nowrap;
+  width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

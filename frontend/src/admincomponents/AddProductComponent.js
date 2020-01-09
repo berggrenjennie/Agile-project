@@ -44,10 +44,10 @@ const styles = theme => ({
 
 // background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
 const StyledButton = styled(Button)`
-  background: linear-gradient(45deg, #DECCCA 30%, #FFF5EE 90%);
+  background: #908393;
   border-radius: 3px;
-  border: 0;
-  color: #505050;
+  border: 1px solid #FFF5EE;
+  color: #FFF5EE;
   width:400px;
   height: 65px;
   padding: 0 30px;
@@ -62,6 +62,7 @@ class AddProductComponent extends Component {
       category: '',
       subCategory1: '',
       subCategory2: '',
+      model: '',
       description:'',
       rating:'',
       material:'',
@@ -95,6 +96,7 @@ class AddProductComponent extends Component {
       category: this.state.category,
       subCategory1: this.state.subCategory1,
       subCategory2: this.state.subCategory2,
+      model: this.state.model,
       name: this.state.productName,
       description: this.state.description,
       rating: this.state.rating,
@@ -120,6 +122,7 @@ class AddProductComponent extends Component {
         category: '',
         subCategory1: '',
         subCategory2: '',
+        model:'',
         description:'',
         material:'',
         size:'',
@@ -144,12 +147,12 @@ class AddProductComponent extends Component {
     event.preventDefault();
   }
   render() {
-    const { productName, category , subCategory1 , subCategory2 , description , rating , material , size , color ,
+    const { productName, category , subCategory1 , subCategory2 , model , description , rating , material , size , color ,
       price , isSale , salePercent , isOnlyBigImage , imagePath , bigImagePath , icon1 , icon2 , icon3 } = this.state;
     const { classes} = this.props;
     return (
       <Fragment>
-        <h2>Lägg till en ny produkt</h2>
+        <h2 className="header">Lägg till en ny produkt</h2>
         <form className={classes.root} autoComplete='off'>
           <div className="flex-container">
             <div>
@@ -177,7 +180,8 @@ class AddProductComponent extends Component {
                 </Select>
               </FormControl>
               <TextField id="subCategory2" name='subCategory2'  value={subCategory2} onChange={this.handleInputChange('subCategory2')} label="Underkategori 2" variant="outlined" />
-              <TextField id="description" name='description'  value={description} onChange={this.handleInputChange('description')} label="Produktinformation" multiline rows="10" defaultValue="Description" variant="outlined"/>
+              <TextField id="model" name='model'  value={model} onChange={this.handleInputChange('model')} label="Model" variant="outlined" />
+              <TextField id="description" name='description'  value={description} onChange={this.handleInputChange('description')} label="Produktinformation" multiline rows="6" defaultValue="Description" variant="outlined"/>
             </div>
             <div>
               <FormControl variant='outlined' className={classes.formControl}>
