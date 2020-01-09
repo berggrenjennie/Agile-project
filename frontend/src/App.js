@@ -12,8 +12,10 @@ import HomeScreen from './screens/HomeScreen';
 import CategoryScreen from './screens/CategoryScreen';
 import ProductScreen from './screens/ProductScreen';
 import FooterComponent from './components/FooterComponent';
+import CommercialComponent from './components/CommercialComponent';
 
 import './App.css';
+
 
 class App extends Component {
   render() {
@@ -21,6 +23,7 @@ class App extends Component {
       <div>
       <Router>
         <NavigationComponent/>
+        <CommercialComponent/>
         <Route exact path="/admin" component={AdminScreen} />
         <Route path="/addProduct" component={AddProductComponent} />
         <Route exact path="/editProduct/:id" component={EditProductComponent} />

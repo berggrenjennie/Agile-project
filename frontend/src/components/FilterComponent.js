@@ -12,21 +12,33 @@ import Select from '@material-ui/core/Select';
 
 //material-ui styling stuff.
 const styles = theme => ({
-  formControl: {
+  formControls: {
     margin: theme.spacing(1),
-    width:200
+    width:200,
   },
-  selectEmpty: {
+  selectEmptys: {
     marginTop: theme.spacing(2)
   },
-  root: {
-    margin: 10,
-    marginTop: 9,
+  roots: {
     display: 'flex',
     justifyContent: 'center'
   },
-  width: {
-    maxWidth: '12em'
+  widths: {
+    maxWidth: '12em',
+    backgroundColor: 'white',
+  },
+  filterBTN: {
+    backgroundColor: '#908393',
+    border: 'rgb(255,73,0)',
+    color: 'white',
+    fontFamily: 'Verdana',
+    padding: '10px',
+    width: '80px',
+    height: '55px',
+    marginTop: '8px',
+    marginLeft: '8px',
+    marginBottom: '20px',
+    borderRadius: '5px'
   }
 });
 
@@ -67,44 +79,45 @@ class FilterComponent extends Component {
 
     return (
       <div>
-        <form className={classes.root} autoComplete='off'>
-          <FormControl variant='outlined' className={classes.formControl}>
-            <InputLabel  htmlFor='size'>Size</InputLabel>
-            <Select className={classes.width} value={size} onChange={this.handleInputChange('size')} input={<OutlinedInput labelWidth={40} name='size' id='size'/>}>
+        <form className={classes.roots} autoComplete='off'>
+          <FormControl variant='outlined' className={classes.formControls}>
+            <InputLabel htmlFor='size'>Size</InputLabel>
+            <Select className={classes.widths} value={size} onChange={this.handleInputChange('size')} input={<OutlinedInput labelWidth={40} name='size' id='size'/>}>
               <MenuItem  value=''><em>Alla Storlekar</em></MenuItem>
               {sizes.map((sizeNumber,index) => {
                 return(
-                  <MenuItem selected classes={{root:'menu-item', selected:'selected'}} key={'size' + index} value={sizeNumber}>{sizeNumber}</MenuItem>
+                  <MenuItem selected classes={{roots:'menu-item', selected:'selected'}} key={'size' + index} value={sizeNumber}>{sizeNumber}</MenuItem>
                 )
               })}
             </Select>
           </FormControl>
-          <FormControl variant='outlined' className={classes.formControl}>
+          <FormControl variant='outlined' className={classes.formControls}>
             <InputLabel htmlFor='color'>Färg</InputLabel>
-            <Select className={classes.width} value={color} onChange={this.handleInputChange('color')} input={<OutlinedInput labelWidth={50} name='color' id='color'/>}>
+            <Select className={classes.widths} value={color} onChange={this.handleInputChange('color')} input={<OutlinedInput labelWidth={50} name='color' id='color'/>}>
               <MenuItem value=''><em>Alla Färg</em></MenuItem>
               {colors.map((colorName,index) => {
                 return(
-                  <MenuItem selected classes={{root:'menu-item', selected:'selected'}} key={'color' + index} value={colorName}>{colorName}</MenuItem>
+                  <MenuItem selected classes={{roots:'menu-item', selected:'selected'}} key={'color' + index} value={colorName}>{colorName}</MenuItem>
                 )
               })}
             </Select>
           </FormControl>
-          <FormControl variant='outlined' className={classes.formControl}>
+          <FormControl variant='outlined' className={classes.formControls}>
             <InputLabel  htmlFor='material'>Material</InputLabel>
-            <Select className={classes.width} value={material} onChange={this.handleInputChange('material')} input={<OutlinedInput labelWidth={60} name='material' id='material'/>}>
+            <Select className={classes.widths} value={material} onChange={this.handleInputChange('material')} input={<OutlinedInput labelWidth={60} name='material' id='material'/>}>
               <MenuItem value=''><em>Alla Material</em></MenuItem>
               {materials.map((materialName,index) => {
                 return(
-                  <MenuItem selected classes={{root:'menu-item', selected:'selected'}} key={'material' + index} value={materialName}>{materialName}</MenuItem>
+                  <MenuItem selected classes={{roots:'menu-item', selected:'selected'}} key={'material' + index} value={materialName}>{materialName}</MenuItem>
                 )
               })}
             </Select>
           </FormControl>
-          <button className='filterBTN' onClick={this.onFilter}>Filter</button>
+          <button className={classes.filterBTN} onClick={this.onFilter}>Filter</button>
         </form>
       </div>
     )
   }
 }
+
 export default withStyles(styles)(FilterComponent);

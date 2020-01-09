@@ -1,0 +1,83 @@
+.commercialContainer {
+    margin: 50px 50px 50px 50px;
+    text-align: center;
+    display: flex;
+}
+.newsletterDiv {
+    background-color: #908393;
+    padding: 20px 20px 10px 20px;
+    width: 25%;
+    margin: 50px 20px 50px 50px;
+}
+.logoImg {
+    height: 5em;
+}
+.Bellus {
+    font-size: 30px;
+    font-family: 'Ink Free';
+    color:#FFF4EE;
+    position: relative;
+    top: 7px;
+    font-weight: bold;
+    margin-left: -10px;
+}
+.nyhetsbrevP {
+    font-family: 'Verdana';
+    font-size: 20px;
+    margin-top: 18px;
+    color:#FFF4EE;
+}
+.newsletterDiv form {
+    font-family: 'Verdana';
+    background-color: #908393;
+    border-radius: 30px;
+    border: 1px solid #FFF4EE;
+    height: 42px;
+    margin-top: 1em;
+}
+.newsletterDiv i {
+    color: #FFF4EE;
+    font-size: 20px;
+    margin: 0;
+    margin-left: -4em;
+    padding: 10px;
+    border-right: 1px solid #FFF4EE;
+}
+.newsletterDiv input {
+    font-size: 13px;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    text-indent: 10px;
+    background-color: #908393;
+}
+.newsletterDiv p:last-child {
+    text-align: center;
+    margin-top: 1em;
+    border: 1px solid #FFF4EE;
+    display: inline-block;
+    width: 30%;
+    padding: 8px;
+    color: #FFF4EE;
+}
+.commercialDiv {
+    margin: 50px 50px 50px 20px;
+    width: 80%;
+    height: 4em;
+}
+.commercialImg {
+    width: 100%;
+    height: 38.5vh;
+}
+.commercialDiv p {
+    position: relative;
+    top: -75px;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #908393;
+}
+.payment {
+    display: block;
+    margin: 0 auto;
+    margin-top: -6em;
+}

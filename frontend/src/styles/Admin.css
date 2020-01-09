@@ -3,7 +3,8 @@ h2{
   text-shadow: 0 2px 4px 1px rgba(255, 105, 135, 0.3);
   font-weight: bold;
 }
-.header {
+
+.header {    
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: 180px;

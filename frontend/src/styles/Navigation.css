@@ -67,11 +67,9 @@
 .MuiButton-label:hover {
     color: #908393;
 }
-.MuiPaper-root {
-    margin-top: 13.1em;
-}
 .MuiDrawer-paperAnchorLeft.MuiPaper-elevation16 {
     height: 25.5em;
+    margin-top: 13.1em;
 }
 .list {
     width: 200px;
@@ -97,3 +95,6 @@
     margin-left: 10px;
     margin-top: -5px;
 }
+.list a {
+    color: #505050;
+} 
