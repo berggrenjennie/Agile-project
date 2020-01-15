@@ -10,6 +10,7 @@ import commercialImg from '../images/commercial1.jpg';
 import logoNoTextImg from '../images/logoNoText.jpg';
 import paymentImg from '../images/Payment.PNG';
 
+/*this component is a commercial to catch the attention of the user.*/
 class CommercialComponent extends Component {
   render() {
     return (

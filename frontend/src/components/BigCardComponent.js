@@ -7,19 +7,18 @@ import CardMedia from '@material-ui/core/CardMedia';
 // backgroundColor:'#FFF5EE', --->card
 const styles = theme => ({
   card: {
-    maxWidth: 900,
-    Height:500,
+    width: 630,
+    height: 755,
     marginTop:0,
   },
   media: {
-    height: 500,
+    height: 755,
   }
 });
-
+/*displays the big pictures in CategoryProductsComponent*/
 class BigCardComponent extends Component {
   render() {
     const { classes , bigImages , index } = this.props;
-
     return (
       <Card className={classes.card}>
         <CardActionArea>

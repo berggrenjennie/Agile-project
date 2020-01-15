@@ -14,6 +14,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 //image imports.
 import logo from '../images/logo.jpg';
 
+/*this component shows different links on the website that the user can visit*/
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({ left: false });
   const [category,setCategory]= React.useState('');

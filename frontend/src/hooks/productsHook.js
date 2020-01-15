@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+/*a function for fetching data from the database using axios*/
 function useFetchProduct(url) {
   const [data,setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  async function fetchUrl() {
+  async function fetchUrl(url) {
     axios.get(url)
       .then(response => {
         setData(response.data);
@@ -14,9 +15,9 @@ function useFetchProduct(url) {
     }
   useEffect(() => {
     setTimeout(() => {
-      fetchUrl();
-    }, 3000);
-  });
+      fetchUrl(url);
+    }, 1000);
+  },[url]);
   return [data,isLoading];
 }
 export { useFetchProduct };

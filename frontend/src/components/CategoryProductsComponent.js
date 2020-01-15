@@ -31,12 +31,13 @@ const styles = theme => ({
 
 const theme = createMuiTheme();
 
+/*this component shows all product cards related to the category that the user has selected.*/
 class CategoryProductsComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
       page: 0 ,
-      productsPerPage:5,
+      productsPerPage:6,
     };
   }
 
@@ -44,7 +45,7 @@ class CategoryProductsComponent extends Component {
     this.setState({ page });
   }
 
-  //calculate the total of pages
+  /*a function which calculates the total pages for the table pagination*/
   calculateTotalPages = x => {
     let remainder = x % this.state.productsPerPage;
     let total = 0;
@@ -60,19 +61,15 @@ class CategoryProductsComponent extends Component {
 
   render() {
     const { productsPerPage , page }=this.state
-    const { classes , products , isLoading , category , subCategory1 , isSaleProduct } = this.props;
+    const { classes , products , isLoading , isFilter} = this.props;
     const bigImages = products.filter((product,index) => (product.isOnlyBigImage ===true));
     return (
       <Fragment>
       {!isLoading?
         <Fragment>
-
-            <h2 className="Header">{category +' - '+ subCategory1}</h2>
-
-
           <div className="CategoryProductsContainer">
             {products.slice(page * productsPerPage, page * productsPerPage + productsPerPage).map((product, index) => {
-              if(index === (page+3) || product.isOnlyBigImage){
+              if((!isFilter && index === 2) ||  product.isOnlyBigImage){
                 return (<div className="bigCard" key={index}><BigCardComponent index={page} bigImages={bigImages}/></div>)
               }
               return (<div className="normalCard" key={index}><CardComponent isbig={product.isOnlyBigImage} product={product}/></div>)

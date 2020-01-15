@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import '../styles/Footer.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
+/*this component shows general information about the website*/
 class FooterComponent extends Component {
   render() {
     return (

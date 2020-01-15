@@ -18,6 +18,7 @@ const actionsStyles = theme => ({
   }
 });
 
+/* a component to handle products per page. You can move forward, backward, see which page you’re in etc.*/
 class TablePaginationActions extends Component {
   handleFirstPageButtonClick = event => {
     this.props.onChangePage(event, 0);
