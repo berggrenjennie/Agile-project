@@ -39,14 +39,20 @@
   color: white;
   background-color: #908393;
 }
+ div.carousel-caption.heroCaption button.MuiButtonBase-root.MuiButton-root.MuiButton-text.shoppa span.MuiButton-label
+{
+  color:#FFF5EE;
+}
 .heroCaption .shoppa:hover {
   background-color: #b1a1b5;
 }
 .heroCaption .flicka {
   right: 17em;
+  color:#FFF5EE;
 }
 .heroCaption .pojke {
   right: -17em;
+  color:#FFF5EE;
 }
 .headingSlide3 {
   top: -5em;

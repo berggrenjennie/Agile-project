@@ -42,12 +42,15 @@ const styles = theme => ({
   }
 });
 
+/*with this component the adminuser can see all the products, including facts, in a table*/
 class AdminComponent extends Component {
   constructor(){
     super();
     this.state = {
       page: 0,
-      rowsPerPage: 10
+      rowsPerPage: 10,
+      isRemove:false,
+      uppdateProducts:[],
     }
   }
 
@@ -69,19 +72,32 @@ class AdminComponent extends Component {
     });
   };
 
-  /*A method which delete a special product from API,
-   by using Delete method.
-  }*/
+  /*A method which deletes a product from the database by using the delete method.*/
   removeProduct(id) {
     axios.delete ('http://localhost:2000/products/' + id)
       .then(response => {
-        console.log('Success:', JSON.stringify(response));
+        // console.log('Success:', JSON.stringify(response));
       })
       .catch(error => console.error('Error:', error));
+      this.setState({
+        isRemove:true,
+      });
+      axios.get('http://localhost:2000/products')
+        .then(response => {
+          this.setState({
+            uppdateProducts:response.data
+          });
+        })
   }
   render() {
-    const { rowsPerPage, page } = this.state;
+    const { rowsPerPage, page , isRemove , uppdateProducts } = this.state;
     const { classes, productsData } = this.props;
+    let products=[];
+    if (isRemove){
+      products=uppdateProducts;
+    }else {
+      products= productsData;
+    }
     return (
       <div>
         <Paper className={classes.root}>
@@ -104,7 +120,7 @@ class AdminComponent extends Component {
               </TableRow>
             </TableHead>
             <TableBody>
-              {productsData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((data, index) => {
+              {products.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((data, index) => {
                 return (
                 <TableRow className='evenColor' key={index}>
                   <TableCell className={classes.border} align='center'>{index+1}</TableCell>

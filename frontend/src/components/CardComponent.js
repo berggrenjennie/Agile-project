@@ -1,10 +1,3 @@
-/*
-CardComponent is a class component which recive product object as a props
-and use to display : image's product, name , descriptions and price.
-isSale=true : is a props whis decide if the card has a sale or not.
-*/
-
-
 //core functionality from react.
 import React, { Component , Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
@@ -17,7 +10,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import Badge from '@material-ui/core/Badge';
@@ -70,6 +62,12 @@ const StyledBadge = withStyles(theme => ({
   },
 }))(Badge);
 
+/*this component displays different cards of products with pictures and facts*/
+/*
+CardComponent is a class component which recives a product object as props
+and uses it to display : product image, name , description and price.
+isSale=true : is a prop which decides if the card is on sale or not.
+*/
 class CardComponent extends Component {
   render() {
     const { classes , product , isSale , isbig} = this.props;

@@ -1,0 +1,60 @@
+.iconsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin:auto;
+}
+
+.iconsContainer > div {
+  margin: auto;
+  margin-top: 20px;
+  border: 1px solid #908393;
+}
+.ratningContainer,.dialogContainer{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content:space-between;
+  align-items:center;
+}
+.dialogContainer{
+  margin-bottom: 0;
+  padding:0;
+}
+.MuiDialogContent-root{
+  padding: 0;
+  width: 600px;
+}
+.dialogCarousel {
+  width: 100%;
+  height: 70vh;
+  margin-top: -40px;
+  margin-bottom: 40px;
+}
+.dialogCarouselImg{
+  width: 100%;
+  height: 70vh;
+}
+.addDivBTN{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:auto;
+  padding: 0;
+}
+.addBTN{
+  width: 350px;
+  height: 55px;
+  color: #FFF5EE;
+  border-radius: 5px;
+  background-color: #908393;
+}
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#908393;
+  font-family: Verdana;
+  padding: 20px;
+}

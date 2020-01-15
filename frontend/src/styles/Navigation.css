@@ -68,7 +68,7 @@
     color: #908393;
 }
 .MuiDrawer-paperAnchorLeft.MuiPaper-elevation16 {
-    height: 25.5em;
+    height: 27em;
     margin-top: 13.1em;
 }
 .list {
@@ -97,4 +97,7 @@
 }
 .list a {
     color: #505050;
-} 
+}
+.list a:hover{
+    color: #505050;
+}

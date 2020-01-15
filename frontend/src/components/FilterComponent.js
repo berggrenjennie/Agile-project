@@ -13,35 +13,36 @@ import Select from '@material-ui/core/Select';
 //material-ui styling stuff.
 const styles = theme => ({
   formControls: {
-    margin: theme.spacing(1),
-    width:200,
+    margin: theme.spacing(0.6),
+    width:180,
   },
   selectEmptys: {
     marginTop: theme.spacing(2)
   },
-  roots: {
+  root: {
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'left'
   },
   widths: {
-    maxWidth: '12em',
+    maxWidth: '11em',
     backgroundColor: 'white',
   },
   filterBTN: {
     backgroundColor: '#908393',
     border: 'rgb(255,73,0)',
-    color: 'white',
+    color: '#FFF5EE',
     fontFamily: 'Verdana',
     padding: '10px',
-    width: '80px',
+    width: '60px',
     height: '55px',
-    marginTop: '8px',
+    marginTop: '6px',
     marginLeft: '8px',
     marginBottom: '20px',
     borderRadius: '5px'
   }
 });
 
+/*this component allows the user to filter the products by material, color and size*/
 class FilterComponent extends Component {
   constructor(){
     super();
@@ -59,7 +60,7 @@ class FilterComponent extends Component {
     this.setState(state);
   }
 
-  //compares the selected object with the timeEntries object from TimeEntriesComponent.
+  //compares the selected object with the productObj object from CategryScreen.
   onFilter = event => {
     event.preventDefault();
     const selectedObj = {
@@ -79,14 +80,14 @@ class FilterComponent extends Component {
 
     return (
       <div>
-        <form className={classes.roots} autoComplete='off'>
+        <form className={classes.root} autoComplete='off'>
           <FormControl variant='outlined' className={classes.formControls}>
             <InputLabel htmlFor='size'>Size</InputLabel>
             <Select className={classes.widths} value={size} onChange={this.handleInputChange('size')} input={<OutlinedInput labelWidth={40} name='size' id='size'/>}>
               <MenuItem  value=''><em>Alla Storlekar</em></MenuItem>
               {sizes.map((sizeNumber,index) => {
                 return(
-                  <MenuItem selected classes={{roots:'menu-item', selected:'selected'}} key={'size' + index} value={sizeNumber}>{sizeNumber}</MenuItem>
+                  <MenuItem selected classes={{root:'menu-item', selected:'selected'}} key={'size' + index} value={sizeNumber}>{sizeNumber}</MenuItem>
                 )
               })}
             </Select>
@@ -97,7 +98,7 @@ class FilterComponent extends Component {
               <MenuItem value=''><em>Alla Färg</em></MenuItem>
               {colors.map((colorName,index) => {
                 return(
-                  <MenuItem selected classes={{roots:'menu-item', selected:'selected'}} key={'color' + index} value={colorName}>{colorName}</MenuItem>
+                  <MenuItem selected classes={{root:'menu-item', selected:'selected'}} key={'color' + index} value={colorName}>{colorName}</MenuItem>
                 )
               })}
             </Select>
@@ -108,7 +109,7 @@ class FilterComponent extends Component {
               <MenuItem value=''><em>Alla Material</em></MenuItem>
               {materials.map((materialName,index) => {
                 return(
-                  <MenuItem selected classes={{roots:'menu-item', selected:'selected'}} key={'material' + index} value={materialName}>{materialName}</MenuItem>
+                  <MenuItem selected classes={{root:'menu-item', selected:'selected'}} key={'material' + index} value={materialName}>{materialName}</MenuItem>
                 )
               })}
             </Select>

@@ -15,6 +15,7 @@ import heroImg1 from '../images/hero1.jpg';
 import heroImg2 from '../images/hero2.jpg';
 import heroImg3 from '../images/hero3.jpg';
 
+/* this component is a carousel that displays three commercial pictures to catch the attention of the user*/
 class CarouselComponent extends Component {
   render() {
     return (

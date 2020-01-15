@@ -25,6 +25,8 @@ const styles = theme => ({
   }
 });
 
+/* this component shows the products which are on sale.
+The admin must register that a product is on sale in the adminpage for the product to be displayed in the REA category*/
 class SaleProductsComponent extends Component {
   render() {
     const { classes , saleProducts , isLoading } = this.props;

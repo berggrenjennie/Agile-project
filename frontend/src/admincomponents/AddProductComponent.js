@@ -9,8 +9,6 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import styled from 'styled-components';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import AssignmentReturnIcon from '@material-ui/icons/AssignmentReturn';
 //CSS imports.
@@ -42,18 +40,8 @@ const styles = theme => ({
   }
 });
 
-// background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
-const StyledButton = styled(Button)`
-  background: #908393;
-  border-radius: 3px;
-  border: 1px solid #FFF5EE;
-  color: #FFF5EE;
-  width:400px;
-  height: 65px;
-  padding: 0 30px;
-  box-shadow: 0 2px 4px 1px rgba(255, 105, 135, 0.3);
-`;
-
+/*with this component the adminuser can add a new product to the database with information,
+some of which are required fields to display the product and to sort them correctly*/
 class AddProductComponent extends Component {
   constructor(props){
     super(props);
@@ -79,16 +67,14 @@ class AddProductComponent extends Component {
     }
   }
 
-  //handeles all the input field data changes from form and updates the employee, client, project and task states.
+  //handeles all the input field data changes from form and updates the states.
   handleInputChange = field => event => {
     const state = {};
     state[field] = event.target.value;
     this.setState(state);
   }
 
-  /*A method which adds an object (newProduct) to API,
- by using Post method.
-}*/
+  /*A method which adds an object (newProduct) to the database, by using the post method.*/
   addProduct= event => {
     event.preventDefault();
     let url = 'http://localhost:2000/products';
@@ -116,7 +102,6 @@ class AddProductComponent extends Component {
 
    axios.post(url,newProduct)
     .then(response => {
-      // console.log('Success:', response))
       this.setState({
         productName: '',
         category: '',
@@ -141,7 +126,7 @@ class AddProductComponent extends Component {
     })
     .catch(error => console.error('Error:', error));
   }
-
+  //navigates to the admin page.
   navigateToAdmin= event => {
     this.props.history.push('/admin');
     event.preventDefault();
@@ -181,7 +166,7 @@ class AddProductComponent extends Component {
               </FormControl>
               <TextField id="subCategory2" name='subCategory2'  value={subCategory2} onChange={this.handleInputChange('subCategory2')} label="Underkategori 2" variant="outlined" />
               <TextField id="model" name='model'  value={model} onChange={this.handleInputChange('model')} label="Model" variant="outlined" />
-              <TextField id="description" name='description'  value={description} onChange={this.handleInputChange('description')} label="Produktinformation" multiline rows="6" defaultValue="Description" variant="outlined"/>
+              <TextField id="description" name='description'  value={description} onChange={this.handleInputChange('description')} label="Produktinformation" multiline rows="4" variant="outlined"/>
             </div>
             <div>
               <FormControl variant='outlined' className={classes.formControl}>
@@ -216,15 +201,15 @@ class AddProductComponent extends Component {
                   <MenuItem selected classes={{root:'menu-item', selected:'selected'}} value='false'>Nej</MenuItem>
                 </Select>
               </FormControl>
-              <TextField id="imagePath" name='imagePath'  value={imagePath} onChange={this.handleInputChange('imagePath')} label="imagePath" multiline rows="2" defaultValue="imagePath" variant="outlined" required/>
-              <TextField id="bigImagePath" name='bigImagePath'  value={bigImagePath} onChange={this.handleInputChange('bigImagePath')} label="bigImagePath" multiline rows="2" defaultValue="bigImagePath" variant="outlined" />
-              <TextField id="icon1" name='icon1'  value={icon1} onChange={this.handleInputChange('icon1')} label="icon1" multiline rows="2" defaultValue="icon1" variant="outlined" />
-              <TextField id="icon2" name='icon2'  value={icon2} onChange={this.handleInputChange('icon2')} label="icon2" multiline rows="2" defaultValue="icon2" variant="outlined" />
-              <TextField id="icon3" name='icon3'  value={icon3} onChange={this.handleInputChange('icon3')} label="icon3" multiline rows="2" defaultValue="icon3" variant="outlined" />
+              <TextField id="imagePath" name='imagePath'  value={imagePath} onChange={this.handleInputChange('imagePath')} label="imagePath" multiline rows="1" variant="outlined" required/>
+              <TextField id="bigImagePath" name='bigImagePath'  value={bigImagePath} onChange={this.handleInputChange('bigImagePath')} label="bigImagePath" multiline rows="1"  variant="outlined" />
+              <TextField id="icon1" name='icon1'  value={icon1} onChange={this.handleInputChange('icon1')} label="icon1" multiline rows="1"  variant="outlined" />
+              <TextField id="icon2" name='icon2'  value={icon2} onChange={this.handleInputChange('icon2')} label="icon2" multiline rows="1"  variant="outlined" />
+              <TextField id="icon3" name='icon3'  value={icon3} onChange={this.handleInputChange('icon3')} label="icon3" multiline rows="1"  variant="outlined" />
             </div>
           </div>
           <div className="addDivBTN">
-            <StyledButton onClick={this.addProduct}>Lägg till produkt</StyledButton>
+            <button className="addBTN" onClick={this.addProduct}>Lägg till produkt</button>
             <IconButton className={classes.iconButton} onClick={this.navigateToAdmin}>
               <AssignmentReturnIcon/>
             </IconButton>

@@ -1,29 +1,35 @@
 .MainContainer {
   background-color: #FFF5EE;
+  margin-top: 10px;
+}
+.filterContainer{
+  display: flex;
+  justify-content:space-around;
+  align-items:center;
+  flex-wrap: nowrap;
+  width: 1000px;
+  margin: auto;
+}
+.filterContainer > div {
+  text-align:left;
+  margin: 20px;
 }
 .CategoryProductsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  align-items: center;
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr ;
+  min-width: 810px;
   width: 1000px;
-  height: 950px;
-  padding: 0px;
-  margin-top:0px;
-}
-.CategoryProductsContainer > div {
-  padding-top: 0;
-  margin: 10px;
+  margin: auto;
 }
 .bigCard {
-  flex-grow:3;
-  width: 600px;
-  height: 600px;
+  grid-column:1/3;
+  grid-row:2/4;
 }
 .normalCard {
-  flex-grow:1;
   width: 300px;
-  height: 300px;
+  height: 400px;
+
 }
 .loading , .pagination{
   display: flex;
@@ -31,10 +37,7 @@
   align-items: center;
   color:#908393;
   font-family: Verdana;
-  padding: 20px
-}
-.Header{
-  margin-left: 100px
+  padding: 20px;
 }
 
 html body div#menu-size.MuiPopover-root div.MuiPaper-root {
@@ -45,4 +48,7 @@ html body div#menu-size.MuiPopover-root div.MuiPaper-root {
   width: 250px;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.MuiButton-label {
+  color:#505050;
 }
